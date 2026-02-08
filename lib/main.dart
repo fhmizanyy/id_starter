@@ -31,8 +31,13 @@ class MyApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.system,
-      home: MyHomePage(title: "Idea Board"), //You Have to Remove this first
+      // home: MyHomePage(title: "Idea Board"), //You Have to Remove this first
       // TODO: 2. Change this to Routes
+      initialRoutes: '/';
+      routes {
+        '/': (context) => const MyHomePage,
+        '/': (context) => const StatefulWidget;
+      }
     );
   }
 }
@@ -52,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
+        title: Text('Hello World'),
         centerTitle: true,
       ),
       body: const Placeholder(), // replace the place holder with Idea Stream
